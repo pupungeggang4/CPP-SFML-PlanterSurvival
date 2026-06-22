@@ -16,6 +16,7 @@ class Scene {
 
 class SceneTitle : public Scene {
     public:
+        std::optional<sf::Sprite> test;
         SceneTitle();
         void ready(Game& game) override;
         void update(Game& game) override;
