@@ -4,29 +4,35 @@ class Game;
 class Scene {
     public:
         Scene();
-        virtual void ready(Game& game);
-        virtual void update(Game& game);
-        virtual void render(Game& game);
-        virtual void mouseDown(Game& game);
-        virtual void mouseMove(Game& game);
-        virtual void mouseUp(Game& game);
-        virtual void keyDown(Game& game);
-        virtual void keyUp(Game& game);
+        virtual void ready(Game&);
+        virtual void update(Game&);
+        virtual void render(Game&);
+        virtual void mouseDown(Game&, sf::Vector2f, sf::Mouse::Button);
+        virtual void mouseMove(Game&, sf::Vector2f);
+        virtual void mouseUp(Game&, sf::Vector2f, sf::Mouse::Button);
+        virtual void keyDown(Game&, sf::Keyboard::Scan);
+        virtual void keyUp(Game&, sf::Keyboard::Scan);
 };
 
 class SceneTitle : public Scene {
     public:
         std::optional<sf::Sprite> test;
         SceneTitle();
-        void ready(Game& game) override;
-        void update(Game& game) override;
-        void render(Game& game) override;
+        void ready(Game&) override;
+        void update(Game&) override;
+        void render(Game&) override;
+        void mouseUp(Game&, sf::Vector2f, sf::Mouse::Button) override;
+        void keyDown(Game&, sf::Keyboard::Scan) override;
+        void keyUp(Game&, sf::Keyboard::Scan) override;
 };
 
 class SceneField : public Scene {
     public:
         SceneField();
-        void ready(Game& game) override;
-        void update(Game& game) override;
-        void render(Game& game) override;
+        void ready(Game&) override;
+        void update(Game&) override;
+        void render(Game&) override;
+        void mouseUp(Game&, sf::Vector2f, sf::Mouse::Button) override;
+        void keyDown(Game&, sf::Keyboard::Scan) override;
+        void keyUp(Game&, sf::Keyboard::Scan) override;
 };

@@ -15,4 +15,5 @@ class Game {
         ~Game();
         void run();
         void loop();
+        void changeSceneTo(std::string);
 };

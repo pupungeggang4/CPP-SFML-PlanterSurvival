@@ -32,11 +32,30 @@ void Game::loop() {
             if (event->is<sf::Event::Closed>()) {
                 window.close();
             }
+            if (const auto* e = event->getIf<sf::Event::MouseButtonReleased>()) {
+                sf::Vector2f pos = {e->position.x * 1280 / (float)height, e->position.y * 720 / (float)height};
+                scene->mouseUp(*this, pos, e->button);
+            }
+            if (const auto* e = event->getIf<sf::Event::KeyPressed>()) {
+                scene->keyDown(*this, e->scancode);
+            }
+            if (const auto* e = event->getIf<sf::Event::KeyReleased>()) {
+                scene->keyUp(*this, e->scancode);
+            }
         }
         scene->update(*this);
         window.clear(sf::Color::White);
         scene->render(*this);
         window.display();
+    }
+}
+
+void Game::changeSceneTo(std::string str) {
+    try {
+        scene = scenes[str];
+        scene->ready(*this);
+    } catch (int e) {
+        window.close();
     }
 }
 

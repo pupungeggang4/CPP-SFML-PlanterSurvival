@@ -17,22 +17,22 @@ void Scene::render(Game& game) {
 
 }
 
-void Scene::mouseDown(Game& game) {
+void Scene::mouseDown(Game& game, sf::Vector2f pos, sf::Mouse::Button button) {
 
 }
 
-void Scene::mouseMove(Game& game) {
+void Scene::mouseMove(Game& game, sf::Vector2f pos) {
 
 }
 
-void Scene::mouseUp(Game& game) {
+void Scene::mouseUp(Game& game, sf::Vector2f pos, sf::Mouse::Button button) {
 
 }
 
-void Scene::keyDown(Game& game) {
+void Scene::keyDown(Game& game, sf::Keyboard::Scan scan) {
 
 }
 
-void Scene::keyUp(Game& game) {
+void Scene::keyUp(Game& game, sf::Keyboard::Scan scan) {
 
 }
