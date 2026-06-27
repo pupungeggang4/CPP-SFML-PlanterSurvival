@@ -1,6 +1,7 @@
 #include "includes.hpp"
 
 class Game;
+class Label;
 class Scene {
     public:
         Scene();
@@ -16,7 +17,9 @@ class Scene {
 
 class SceneTitle : public Scene {
     public:
-        std::optional<sf::Sprite> test;
+        int selected = 0;
+        std::optional<sf::Sprite> arrow;
+        sptr<Label> textTitle;
         SceneTitle();
         void ready(Game&) override;
         void update(Game&) override;

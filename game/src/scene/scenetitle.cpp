@@ -1,4 +1,8 @@
 #include "asset.hpp"
+#include "ui.hpp"
+
+#include "ui/label.hpp"
+
 #include "scene/scene.hpp"
 #include "game.hpp"
 
@@ -7,7 +11,9 @@ SceneTitle::SceneTitle() {
 }
 
 void SceneTitle::ready(Game& game) {
-    test.emplace(*Asset::texture->at("arrow"));
+    selected = 0;
+    arrow.emplace(*Asset::texture->at("arrow"));
+    textTitle = make_shared<Label>(UI::title["text_title"], "Planterguy Survival", 32);
 }
 
 void SceneTitle::update(Game& game) {
@@ -15,7 +21,9 @@ void SceneTitle::update(Game& game) {
 }
 
 void SceneTitle::render(Game& game) {
-    game.window.draw(*test);
+    arrow->setPosition({UI::title["arrow"][0], UI::title["arrow"][1] + UI::title["arrow"][5] * selected});
+    game.window.draw(*arrow);
+    textTitle->render(game);
 }
 
 void SceneTitle::mouseUp(Game& game, sf::Vector2f pos, sf::Mouse::Button button) {
