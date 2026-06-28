@@ -33,7 +33,20 @@ void SceneTitle::mouseUp(Game& game, sf::Vector2f pos, sf::Mouse::Button button)
 }
 
 void SceneTitle::keyDown(Game& game, sf::Keyboard::Scan scan) {
-
+    using Scan = sf::Keyboard::Scan;
+    if (scan == Scan::Down) {
+        selected = (selected + 1) % 4;
+    }
+    if (scan == Scan::Up) {
+        selected = (selected + 3) % 4;
+    }
+    if (scan == Scan::Enter) {
+        if (selected == 0) {
+            game.changeSceneTo("field");
+        } else if (selected == 3) {
+            game.window.close();
+        }
+    }
 }
 
 void SceneTitle::keyUp(Game& game, sf::Keyboard::Scan scan) {
