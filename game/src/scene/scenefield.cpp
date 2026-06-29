@@ -21,7 +21,11 @@ void SceneField::render(Game& game) {
 }
 
 void SceneField::mouseUp(Game& game, sf::Vector2f pos, sf::Mouse::Button button) {
+    if (game.menu == false) {
 
+    } else {
+        windowMenu->handleClick(game, pos);
+    }
 }
 
 void SceneField::keyDown(Game& game, sf::Keyboard::Scan scan) {

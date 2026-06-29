@@ -52,7 +52,7 @@ void WindowMenu::handleKey(Game& game, sf::Keyboard::Scan scan) {
     if (scan == Scan::Enter) {
         if (selected == 0) {
             game.menu = false;
-        } else if (selected == 3) {
+        } else if (selected == 2) {
             game.window.close();
         }
     }
