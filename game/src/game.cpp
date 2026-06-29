@@ -33,7 +33,7 @@ void Game::loop() {
                 window.close();
             }
             if (const auto* e = event->getIf<sf::Event::MouseButtonReleased>()) {
-                sf::Vector2f pos = {e->position.x * 1280 / (float)height, e->position.y * 720 / (float)height};
+                sf::Vector2f pos = {e->position.x * 1280 / (float)width, e->position.y * 720 / (float)height};
                 scene->mouseUp(*this, pos, e->button);
             }
             if (const auto* e = event->getIf<sf::Event::KeyPressed>()) {

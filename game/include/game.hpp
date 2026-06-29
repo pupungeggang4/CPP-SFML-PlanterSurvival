@@ -10,6 +10,8 @@ class Game {
         sf::View viewUI, viewCamera;
         std::unordered_map<std::string, sptr<Scene>> scenes = {};
         sptr<Scene> scene;
+        std::string state;
+        bool menu = false;
 
         Game();
         ~Game();

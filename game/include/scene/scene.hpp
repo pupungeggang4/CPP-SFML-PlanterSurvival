@@ -2,6 +2,9 @@
 
 class Game;
 class Label;
+class ButtonSimple;
+class WindowMenu;
+
 class Scene {
     public:
         Scene();
@@ -20,6 +23,8 @@ class SceneTitle : public Scene {
         int selected = 0;
         std::optional<sf::Sprite> arrow;
         sptr<Label> textTitle;
+        sptr<ButtonSimple> buttonStart, buttonErase, buttonCollection, buttonQuit;
+
         SceneTitle();
         void ready(Game&) override;
         void update(Game&) override;
@@ -31,6 +36,7 @@ class SceneTitle : public Scene {
 
 class SceneField : public Scene {
     public:
+        sptr<WindowMenu> windowMenu;
         SceneField();
         void ready(Game&) override;
         void update(Game&) override;
