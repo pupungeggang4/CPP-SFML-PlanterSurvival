@@ -45,3 +45,15 @@ class SceneField : public Scene {
         void keyDown(Game&, sf::Keyboard::Scan) override;
         void keyUp(Game&, sf::Keyboard::Scan) override;
 };
+
+class SceneCollection : public Scene {
+    public:
+        SceneCollection();
+        void ready(Game&) override;
+        void update(Game&) override;
+        void render(Game&) override;
+        void mouseUp(Game&, sf::Vector2f, sf::Mouse::Button) override;
+        void keyDown(Game&, sf::Keyboard::Scan) override;
+        void keyUp(Game&, sf::Keyboard::Scan) override;
+};
+
