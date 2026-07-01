@@ -1,8 +1,12 @@
 #include "scene/scene.hpp"
+#include "ui.hpp"
+#include "ui/button.hpp"
+
 #include "subscene/window.hpp"
 #include "game.hpp"
 
 SceneField::SceneField() {
+    buttonMenu = make_shared<ButtonSimple>(UI::field["button_menu"], sf::Color::Cyan, "");
     windowMenu = make_shared<WindowMenu>();
 }
 
@@ -15,6 +19,7 @@ void SceneField::update(Game& game) {
 }
 
 void SceneField::render(Game& game) {
+    buttonMenu->render(game);
     if (game.menu == true) {
         windowMenu->render(game);
     }
@@ -22,8 +27,13 @@ void SceneField::render(Game& game) {
 
 void SceneField::mouseUp(Game& game, sf::Vector2f pos, sf::Mouse::Button button) {
     if (game.menu == false) {
-
+        if (buttonMenu->contains(pos)) {
+            game.menu = true;
+        }
     } else {
+        if (buttonMenu->contains(pos)) {
+            game.menu = false;
+        }
         windowMenu->handleClick(game, pos);
     }
 }

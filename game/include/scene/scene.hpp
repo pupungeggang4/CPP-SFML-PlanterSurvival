@@ -36,6 +36,7 @@ class SceneTitle : public Scene {
 
 class SceneField : public Scene {
     public:
+        sptr<ButtonSimple> buttonMenu;
         sptr<WindowMenu> windowMenu;
         SceneField();
         void ready(Game&) override;

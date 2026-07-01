@@ -9,6 +9,10 @@ std::unordered_map<std::string, std::vector<float>> UI::title = {
     {"arrow", {80, 160, 80, 80, 0, 80}}
 };
 
+std::unordered_map<std::string, std::vector<float>> UI::field = {
+    {"button_menu", {1220, 20, 40, 40}}
+};
+
 std::unordered_map<std::string, std::vector<float>> UI::menu = {
     {"rect", {320, 200, 640, 320}},
     {"text_title", {340, 220}},
