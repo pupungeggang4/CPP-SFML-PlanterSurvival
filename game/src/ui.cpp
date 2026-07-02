@@ -21,3 +21,7 @@ std::unordered_map<std::string, std::vector<float>> UI::menu = {
     {"button_quit", {320, 440, 640, 80}},
     {"arrow", {240, 280, 80, 80, 0, 80}}
 };
+
+std::unordered_map<std::string, std::vector<float>> UI::collection = {
+    {"button_back", {1180, 20, 80, 80}}
+};

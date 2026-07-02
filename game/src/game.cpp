@@ -21,6 +21,7 @@ Game::Game() {
 void Game::run() {
     scenes["title"] = make_shared<SceneTitle>();
     scenes["field"] = make_shared<SceneField>();
+    scenes["collection"] = make_shared<SceneCollection>();
     scene = scenes["title"];
     scene->ready(*this);
     loop();

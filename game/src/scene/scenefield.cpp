@@ -26,15 +26,17 @@ void SceneField::render(Game& game) {
 }
 
 void SceneField::mouseUp(Game& game, sf::Vector2f pos, sf::Mouse::Button button) {
-    if (game.menu == false) {
-        if (buttonMenu->contains(pos)) {
-            game.menu = true;
+    if (button == sf::Mouse::Button::Left) {
+        if (game.menu == false) {
+            if (buttonMenu->contains(pos)) {
+                game.menu = true;
+            }
+        } else {
+            if (buttonMenu->contains(pos)) {
+                game.menu = false;
+            }
+            windowMenu->handleClick(game, pos);
         }
-    } else {
-        if (buttonMenu->contains(pos)) {
-            game.menu = false;
-        }
-        windowMenu->handleClick(game, pos);
     }
 }
 

@@ -38,6 +38,8 @@ void SceneTitle::mouseUp(Game& game, sf::Vector2f pos, sf::Mouse::Button button)
     if (button == sf::Mouse::Button::Left) {
         if (buttonStart->contains(pos)) {
             game.changeSceneTo("field");
+        } else if (buttonCollection->contains(pos)) {
+            game.changeSceneTo("collection");
         } else if (buttonQuit->contains(pos)) {
             game.window.close();
         }
@@ -55,6 +57,8 @@ void SceneTitle::keyDown(Game& game, sf::Keyboard::Scan scan) {
     if (scan == Scan::Enter) {
         if (selected == 0) {
             game.changeSceneTo("field");
+        } else if (selected == 2) {
+            game.changeSceneTo("collection");
         } else if (selected == 3) {
             game.window.close();
         }
