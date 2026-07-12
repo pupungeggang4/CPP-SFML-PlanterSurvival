@@ -3,6 +3,7 @@
 class Game;
 class Label;
 class ButtonSimple;
+class ButtonTexture;
 class WindowMenu;
 
 class Scene {
@@ -36,7 +37,7 @@ class SceneTitle : public Scene {
 
 class SceneField : public Scene {
     public:
-        sptr<ButtonSimple> buttonMenu;
+        sptr<ButtonTexture> buttonMenu;
         sptr<WindowMenu> windowMenu;
         SceneField();
         void ready(Game&) override;

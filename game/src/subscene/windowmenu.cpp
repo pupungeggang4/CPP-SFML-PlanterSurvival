@@ -35,6 +35,9 @@ void WindowMenu::render(Game& game) {
 void WindowMenu::handleClick(Game& game, sf::Vector2f pos) {
     if (buttonResume->contains(pos)) {
         game.menu = false;
+    } else if (buttonSurrender->contains(pos)) {
+        game.menu = false;
+        game.changeSceneTo("title");
     } else if (buttonQuit->contains(pos)) {
         game.window.close();
     }
@@ -52,6 +55,9 @@ void WindowMenu::handleKey(Game& game, sf::Keyboard::Scan scan) {
     if (scan == Scan::Enter) {
         if (selected == 0) {
             game.menu = false;
+        } else if (selected == 1) {
+            game.menu = false;
+            game.changeSceneTo("title");
         } else if (selected == 2) {
             game.window.close();
         }

@@ -1,4 +1,5 @@
 #include "scene/scene.hpp"
+#include "asset.hpp"
 #include "ui.hpp"
 #include "ui/button.hpp"
 
@@ -6,7 +7,7 @@
 #include "game.hpp"
 
 SceneField::SceneField() {
-    buttonMenu = make_shared<ButtonSimple>(UI::field["button_menu"], sf::Color::Cyan, "");
+    buttonMenu = make_shared<ButtonTexture>(UI::field["button_menu"], Asset::texture->at("menu"), "");
     windowMenu = make_shared<WindowMenu>();
 }
 
