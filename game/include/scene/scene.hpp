@@ -50,6 +50,7 @@ class SceneField : public Scene {
 
 class SceneCollection : public Scene {
     public:
+        sptr<Label> textTitle;
         sptr<ButtonSimple> buttonBack;
         SceneCollection();
         void ready(Game&) override;

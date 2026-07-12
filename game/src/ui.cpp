@@ -23,5 +23,6 @@ std::unordered_map<std::string, std::vector<float>> UI::menu = {
 };
 
 std::unordered_map<std::string, std::vector<float>> UI::collection = {
+    {"text_title", {20, 20}},
     {"button_back", {1180, 20, 80, 80}}
 };

@@ -8,6 +8,7 @@
 #include "game.hpp"
 
 SceneCollection::SceneCollection() {
+    textTitle = make_shared<Label>(UI::collection["text_title"], "Collection");
     buttonBack = make_shared<ButtonSimple>(UI::collection["button_back"], sf::Color::Cyan, "");
 }
 
@@ -18,6 +19,7 @@ void SceneCollection::update(Game& game) {
 }
 
 void SceneCollection::render(Game& game) {
+    textTitle->render(game);
     buttonBack->render(game);
 }
 
