@@ -2,5 +2,5 @@
 
 class UI {
     public:
-        static std::unordered_map<std::string, std::vector<float>> title, field, menu, collection;
+        static std::unordered_map<std::string, std::vector<float>> title, field, reward, start, menu, collection;
 };

@@ -12,7 +12,7 @@ Game::Game() {
         width = (unsigned int)(desktop.size.x * 0.8f);
         height = (unsigned int)(width / aspectRatio);
     }
-    window = sf::RenderWindow(sf::VideoMode({width, height}), "Planter Survival");
+    window = sf::RenderWindow(sf::VideoMode({width, height}), "Planterguy Survival");
     viewUI = sf::View({640, 360}, {1280, 720});
     viewCamera = sf::View({0, 0}, {1280, 720});
     window.setView(viewUI);

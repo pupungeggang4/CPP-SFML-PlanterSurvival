@@ -4,7 +4,7 @@ class Game;
 class Label;
 class ButtonSimple;
 class ButtonTexture;
-class WindowMenu;
+class WindowMenu; class WindowStart; class WindowReward;
 
 class Scene {
     public:
@@ -38,6 +38,8 @@ class SceneTitle : public Scene {
 class SceneField : public Scene {
     public:
         sptr<ButtonTexture> buttonMenu;
+        sptr<WindowStart> windowStart;
+        sptr<WindowReward> windowReward;
         sptr<WindowMenu> windowMenu;
         SceneField();
         void ready(Game&) override;

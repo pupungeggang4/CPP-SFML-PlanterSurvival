@@ -27,3 +27,26 @@ class WindowMenu : public Window {
         void handleClick(Game&, sf::Vector2f) override;
         void handleKey(Game&, sf::Keyboard::Scan) override;
 };
+
+class WindowStart : public Window {
+    public:
+        int selected = 0;
+        sf::RectangleShape background;
+        sptr<Label> textTitle;
+        std::array<sptr<ButtonSimple>, 3> buttons = {};
+
+        WindowStart();
+        void ready(Game&) override;
+        void render(Game&) override;
+        void handleClick(Game&, sf::Vector2f) override;
+        void handleKey(Game&, sf::Keyboard::Scan) override;
+};
+
+class WindowReward : public Window {
+    public:
+        WindowReward();
+        void ready(Game&) override;
+        void render(Game&) override;
+        void handleClick(Game&, sf::Vector2f) override;
+        void handleKey(Game&, sf::Keyboard::Scan) override;
+};

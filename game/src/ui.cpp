@@ -13,6 +13,15 @@ std::unordered_map<std::string, std::vector<float>> UI::field = {
     {"button_menu", {1220, 20, 40, 40}}
 };
 
+std::unordered_map<std::string, std::vector<float>> UI::start = {
+    {"rect", {160, 40, 960, 640}},
+    {"button_ok", {560, 560, 160, 80}},
+};
+
+std::unordered_map<std::string, std::vector<float>> UI::reward = {
+    {"rect", {160, 40, 960, 640}}
+};
+
 std::unordered_map<std::string, std::vector<float>> UI::menu = {
     {"rect", {320, 200, 640, 320}},
     {"text_title", {340, 220}},

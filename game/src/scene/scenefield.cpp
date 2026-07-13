@@ -9,6 +9,8 @@
 SceneField::SceneField() {
     buttonMenu = make_shared<ButtonTexture>(UI::field["button_menu"], Asset::texture->at("menu"), "");
     windowMenu = make_shared<WindowMenu>();
+    windowStart = make_shared<WindowStart>();
+    windowReward = make_shared<WindowReward>();
 }
 
 void SceneField::ready(Game& game) {
@@ -21,6 +23,11 @@ void SceneField::update(Game& game) {
 
 void SceneField::render(Game& game) {
     buttonMenu->render(game);
+
+    if (game.state == "start") {
+        windowStart->render(game);
+    }
+
     if (game.menu == true) {
         windowMenu->render(game);
     }
