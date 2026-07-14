@@ -12,8 +12,13 @@ FetchContent_Declare(SFML
     SYSTEM)
 FetchContent_MakeAvailable(SFML)
 
-file(GLOB ALL_SOURCES CONFIGURE_DEPENDS "src/*.cpp" "src/*/*.cpp")
-file(GLOB_RECURSE ASSETS CONFIGURE_DEPENDS "assets/*")
+file(GLOB_RECURSE ALL_SOURCES CONFIGURE_DEPENDS
+    "${CMAKE_CURRENT_SOURCE_DIR}/src/*.cpp" 
+    "${CMAKE_CURRENT_SOURCE_DIR}/src/*.hpp"
+)
+file(GLOB_RECURSE ASSETS CONFIGURE_DEPENDS
+    "${CMAKE_CURRENT_SOURCE_DIR}/assets/*.png"
+)
 file(COPY "${CMAKE_SOURCE_DIR}/asset/font" DESTINATION "${CMAKE_BINARY_DIR}/bin/asset")
 file(COPY "${CMAKE_SOURCE_DIR}/asset/image" DESTINATION "${CMAKE_BINARY_DIR}/bin/asset")
 #file(COPY "${CMAKE_SOURCE_DIR}/src/data" DESTINATION "${CMAKE_BINARY_DIR}/bin")

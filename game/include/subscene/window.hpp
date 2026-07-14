@@ -33,6 +33,8 @@ class WindowStart : public Window {
         int selected = 0;
         sf::RectangleShape background;
         sptr<Label> textTitle;
+        sptr<ButtonSimple> buttonStart;
+        std::optional<sf::Sprite> selectFrame;
         std::array<sptr<ButtonSimple>, 3> buttons = {};
 
         WindowStart();

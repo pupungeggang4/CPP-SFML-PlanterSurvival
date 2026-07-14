@@ -14,7 +14,7 @@ SceneField::SceneField() {
 }
 
 void SceneField::ready(Game& game) {
-
+    windowStart->ready(game);
 }
 
 void SceneField::update(Game& game) {
@@ -39,6 +39,9 @@ void SceneField::mouseUp(Game& game, sf::Vector2f pos, sf::Mouse::Button button)
             if (buttonMenu->contains(pos)) {
                 game.menu = true;
             }
+            if (game.state == "start") {
+                windowStart->handleClick(game, pos);
+            }
         } else {
             if (buttonMenu->contains(pos)) {
                 game.menu = false;
@@ -54,6 +57,9 @@ void SceneField::keyDown(Game& game, sf::Keyboard::Scan scan) {
     if (game.menu == false) {
         if (scan == Scan::Escape) {
             game.menu = true;
+        }
+        if (game.state == "start") {
+            windowStart->handleKey(game, scan);
         }
     } else {
         windowMenu->handleKey(game, scan);

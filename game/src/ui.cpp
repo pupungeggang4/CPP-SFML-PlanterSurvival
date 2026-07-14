@@ -15,6 +15,8 @@ std::unordered_map<std::string, std::vector<float>> UI::field = {
 
 std::unordered_map<std::string, std::vector<float>> UI::start = {
     {"rect", {160, 40, 960, 640}},
+    {"text_title", {180, 60}},
+    {"buttons", {200, 120, 240, 240, 320, 0}},
     {"button_ok", {560, 560, 160, 80}},
 };
 

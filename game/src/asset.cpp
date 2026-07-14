@@ -7,6 +7,7 @@ void Asset::loadAsset() {
     neodgm = make_shared<sf::Font>("asset/font/neodgm.ttf");
     texture->emplace("arrow", make_shared<sf::Texture>("asset/image/arrow.png"));
     texture->emplace("menu", make_shared<sf::Texture>("asset/image/menu.png"));
+    texture->emplace("select_frame", make_shared<sf::Texture>("asset/image/selectframe.png"));
 }
 
 void Asset::dispose() {
