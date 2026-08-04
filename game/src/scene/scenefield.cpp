@@ -3,6 +3,8 @@
 #include "ui.hpp"
 #include "ui/button.hpp"
 
+#include "entity/player.hpp"
+
 #include "subscene/window.hpp"
 #include "game.hpp"
 
@@ -18,10 +20,12 @@ void SceneField::ready(Game& game) {
 }
 
 void SceneField::update(Game& game) {
-
+    game.player->update(game);
 }
 
 void SceneField::render(Game& game) {
+    game.player->render(game);
+
     buttonMenu->render(game);
 
     if (game.state == "start") {

@@ -4,7 +4,7 @@ project(CMakeSFMLProject LANGUAGES CXX)
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 
 if (LOCAL)
-	find_package(SFML COMPONENTS graphics window system REQUIRED)
+    find_package(SFML COMPONENTS Graphics Window System REQUIRED)
 else()
 	include(FetchContent)
 	FetchContent_Declare(SFML
