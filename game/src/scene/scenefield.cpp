@@ -20,12 +20,18 @@ void SceneField::ready(Game& game) {
 }
 
 void SceneField::update(Game& game) {
-    game.player->update(game);
+    if (game.menu == false) {
+        if (game.state == "") {
+            game.player->update(game);
+        }
+    }
 }
 
 void SceneField::render(Game& game) {
+    game.window.setView(game.viewCamera);
     game.player->render(game);
 
+    game.window.setView(game.viewUI);
     buttonMenu->render(game);
 
     if (game.state == "start") {

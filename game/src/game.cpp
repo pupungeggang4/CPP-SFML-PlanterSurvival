@@ -17,7 +17,6 @@ Game::Game() {
     window.setVerticalSyncEnabled(true);
     viewUI = sf::View({640, 360}, {1280, 720});
     viewCamera = sf::View({0, 0}, {1280, 720});
-    window.setView(viewUI);
     clock = sf::Clock();
 }
 

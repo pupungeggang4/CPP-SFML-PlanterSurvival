@@ -19,6 +19,7 @@ void SceneCollection::update(Game& game) {
 }
 
 void SceneCollection::render(Game& game) {
+    game.window.setView(game.viewUI);
     textTitle->render(game);
     buttonBack->render(game);
 }

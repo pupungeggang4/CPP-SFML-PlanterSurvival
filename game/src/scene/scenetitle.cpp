@@ -25,6 +25,7 @@ void SceneTitle::update(Game& game) {
 }
 
 void SceneTitle::render(Game& game) {
+    game.window.setView(game.viewUI);
     arrow->setPosition({UI::title["arrow"][0], UI::title["arrow"][1] + UI::title["arrow"][5] * selected});
     game.window.draw(*arrow);
     textTitle->render(game);
