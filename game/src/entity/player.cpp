@@ -6,6 +6,9 @@ Player::Player() {
     sprite.emplace(*Asset::texture->at("player"));
 }
 
+void Player::createPlayer(int ID) {
+}
+
 void Player::update(Game& game) {
     if (game.keyPressed["left"]) {
         rect.position.x -= speed * game.dt;
