@@ -2,6 +2,9 @@
 
 class Scene;
 class Player;
+class Field;
+class Adventure;
+class PlayerAdventure;
 
 class Game {
     public:
@@ -19,7 +22,9 @@ class Game {
             {"left", false}, {"right", false}, {"up", false}, {"down", false}
         };
 
-        sptr<Player> player;
+        sptr<Field> field;
+        sptr<Adventure> adventure;
+        sptr<PlayerAdventure> playerAdventure; 
 
         Game();
         ~Game();

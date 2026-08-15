@@ -17,6 +17,8 @@ class Player {
         std::vector<sptr<Equipment>> equipments;
 
         std::vector<sptr<Card>> hand, deck;
+        int gold;
+        float life, lifeMax, energy, energyMax;
 
         Player();
         void createPlayer(int);

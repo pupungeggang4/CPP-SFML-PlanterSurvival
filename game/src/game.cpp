@@ -1,6 +1,9 @@
 #include "asset.hpp"
 #include "game.hpp"
 #include "entity/player.hpp"
+#include "entity/field.hpp"
+#include "adventure.hpp"
+#include "playeradventure.hpp"
 #include "scene/scene.hpp"
 
 Game::Game() {
@@ -21,7 +24,10 @@ Game::Game() {
 }
 
 void Game::run() {
-    player = make_shared<Player>();
+    adventure = make_shared<Adventure>();
+    playerAdventure = make_shared<PlayerAdventure>();
+    field = make_shared<Field>();
+
     scenes["title"] = make_shared<SceneTitle>();
     scenes["field"] = make_shared<SceneField>();
     scenes["collection"] = make_shared<SceneCollection>();
